@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(knowledge_representation)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -8,7 +8,11 @@ find_package(catkin REQUIRED COMPONENTS
         )
 find_package(Boost REQUIRED COMPONENTS python)
 
+if($ENV{ROS_DISTRO} STREQUAL "melodic")
 find_package(PythonLibs 2.7 REQUIRED)
+else()
+    find_package(PythonLibs 3.8 REQUIRED)
+endif()
 
 find_package(PostgreSQL)
 
