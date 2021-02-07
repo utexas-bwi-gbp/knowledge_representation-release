@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
         )
 find_package(Boost REQUIRED COMPONENTS python)
 
-if($ENV{ROS_DISTRO} STREQUAL "melodic")
+if($ENV{ROS_DISTRO} STREQUAL "kinetic" OR $ENV{ROS_DISTRO} STREQUAL "melodic")
 find_package(PythonLibs 2.7 REQUIRED)
 else()
     find_package(PythonLibs 3.8 REQUIRED)
@@ -101,7 +101,7 @@ install(TARGETS knowledge_rep _libknowledge_rep_wrapper_cpp
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})
 
-catkin_install_python(PROGRAMS scripts/ikr scripts/populate_with_knowledge scripts/populate_with_map scripts/show_me
+catkin_install_python(PROGRAMS scripts/ikr scripts/populate_with_knowledge scripts/populate_with_map scripts/show_me scripts/create_door_pgm
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(PROGRAMS scripts/configure_postgresql.sh
