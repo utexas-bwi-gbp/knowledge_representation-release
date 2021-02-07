@@ -1,6 +1,12 @@
-# knowledge_representation [![CI](https://github.com/utexas-bwi/knowledge_representation/workflows/CI/badge.svg)](https://github.com/utexas-bwi/knowledge_representation/actions?query=workflow%3ACI)
+# knowledge_representation
 
-Mechanisms for storing and querying information about the world. A nicely packaged [database schema](https://en.wikipedia.org/wiki/Database_schema) to structure the kinds of knowledge that a robot might need and tools for [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) within that structure. Integrate it into your robot's perception so you can query where objects were seen, or into your task planning system so you can easily manage all of your facts.
+[![CI](https://github.com/utexas-bwi/knowledge_representation/workflows/CI/badge.svg)](https://github.com/utexas-bwi/knowledge_representation/actions?query=workflow%3ACI)
+
+Mechanisms for storing and querying information about the world. A nicely
+packaged [database schema](https://en.wikipedia.org/wiki/Database_schema) to structure the kinds of knowledge that a
+robot might need and tools for [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) within
+that structure. Integrate it into your robot's perception so you can query where objects were seen, or into your task
+planning system so you can easily manage all of your facts.
 
 * Persistent storage of facts and map geometry backed by a local PostgreSQL database
 * Convenient APIs for common queries, like getting all instances of a type of object
@@ -26,6 +32,7 @@ Mobile robots often have to answer questions like "what room am I in?" or "which
 * **Points** are a special kind of instance which store an x and y coordinate.
 * **Poses** are a special kind of instance which store an x and y coordinate as well as a direction.
 * **Regions** are a special kind of instance which store a list of x and y coordinates defining a closed region.
+* **Doors** are a special kind of instance which store a pair of x and y coordinates defining a door.
 
 All of these types are uniquely tied to a single **map**, a special kind of instance.
 
