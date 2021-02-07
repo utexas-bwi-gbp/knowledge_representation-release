@@ -1,0 +1,13 @@
+Source: ros-melodic-knowledge-representation
+Section: misc
+Priority: optional
+Maintainer: Nick Walker <nswalker@cs.washington.edu>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libpqxx-4.0v5, libpqxx-dev, postgresql, postgresql-contrib, python-dev, python-setuptools, ros-melodic-catkin, ros-melodic-roslint, ros-melodic-rosunit
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-knowledge-representation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libpqxx-4.0v5, libpqxx-dev, postgresql, postgresql-contrib, python-dev, python-pil
+Description: APIs for storing and querying information about the world.
+ Provides C++ and Python API's to make getting facts in and out easy (while still exposing a full SQL interface). Supports PostgreSQL and MySQL backends.
