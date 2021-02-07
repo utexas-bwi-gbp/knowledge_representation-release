@@ -22,6 +22,7 @@ class LongTermMemoryConduitPostgreSQL : public LongTermMemoryConduitInterface<Lo
   using PointImpl = LTMCPoint<LongTermMemoryConduitPostgreSQL>;
   using PoseImpl = LTMCPose<LongTermMemoryConduitPostgreSQL>;
   using RegionImpl = LTMCRegion<LongTermMemoryConduitPostgreSQL>;
+  using DoorImpl = LTMCDoor<LongTermMemoryConduitPostgreSQL>;
 
   // Give wrapper classes access to our protected members. Database access
   // is isolated into this class, so any wrapper methods that need to talk to the database
@@ -33,6 +34,7 @@ class LongTermMemoryConduitPostgreSQL : public LongTermMemoryConduitInterface<Lo
   friend PointImpl;
   friend PoseImpl;
   friend RegionImpl;
+  friend DoorImpl;
 
   // Allow the interface to forward calls to our protected members
   friend class LongTermMemoryConduitInterface;
@@ -84,6 +86,8 @@ public:
 
   boost::optional<RegionImpl> getRegion(uint entity_id);
 
+  boost::optional<DoorImpl> getDoor(uint entity_id);
+
   // ATTRIBUTES
 
   // TODO(nickswalker): Expose this in the interface once we know what run-time attribute
@@ -122,7 +126,7 @@ public:
       for (const auto& row : query_result)
       {
         result.emplace_back(row["entity_id"].as<uint>(), row["attribute_name"].as<std::string>(),
-                            row["attribute_name"].as<T>());
+                            row["attribute_value"].as<T>());
       }
     }
     catch (const std::exception& e)
@@ -222,11 +226,15 @@ protected:
 
   RegionImpl addRegion(MapImpl& map, const std::string& name, const std::vector<std::pair<double, double>>& points);
 
+  DoorImpl addDoor(MapImpl& map, const std::string& name, double x_0, double y_0, double x_1, double y_1);
+
   boost::optional<PointImpl> getPoint(MapImpl& map, const std::string& name);
 
   boost::optional<PoseImpl> getPose(MapImpl& map, const std::string& name);
 
   boost::optional<RegionImpl> getRegion(MapImpl& map, const std::string& name);
+
+  boost::optional<DoorImpl> getDoor(MapImpl& map, const std::string& name);
 
   std::vector<PointImpl> getAllPoints(MapImpl& map);
 
@@ -234,7 +242,9 @@ protected:
 
   std::vector<RegionImpl> getAllRegions(MapImpl& map);
 
-  std::vector<RegionImpl> getContainingRegions(MapImpl& map, std::pair<double, double> point);
+  std::vector<DoorImpl> getAllDoors(MapImpl& map);
+
+  std::vector<RegionImpl> getContainingRegions(MapImpl& map, double x, double y);
 
   bool renameMap(MapImpl& map, const std::string& new_name);
 
@@ -244,7 +254,7 @@ protected:
 
   std::vector<PoseImpl> getContainedPoses(RegionImpl& region);
 
-  bool isPointContained(const RegionImpl& region, std::pair<double, double> point);
+  bool isPointContained(const RegionImpl& region, double x, double y);
 
 private:
   /**
@@ -267,6 +277,7 @@ typedef LTMCInstance<LongTermMemoryConduitPostgreSQL> Instance;
 typedef LTMCPoint<LongTermMemoryConduitPostgreSQL> Point;
 typedef LTMCPose<LongTermMemoryConduitPostgreSQL> Pose;
 typedef LTMCRegion<LongTermMemoryConduitPostgreSQL> Region;
+typedef LTMCDoor<LongTermMemoryConduitPostgreSQL> Door;
 typedef LTMCMap<LongTermMemoryConduitPostgreSQL> Map;
 typedef LongTermMemoryConduitPostgreSQL LongTermMemoryConduit;
 }  // namespace knowledge_rep
