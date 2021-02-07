@@ -149,14 +149,30 @@ CREATE TABLE maps
    This trigger manually deletes entities associated with the map. */
 CREATE FUNCTION delete_map_owned_entities() RETURNS TRIGGER AS $_$
 BEGIN
-    DELETE FROM entities WHERE entity_id IN (SELECT entity_id FROM (SELECT entity_id, parent_map_id FROM poses UNION SELECT entity_id, parent_map_id FROM points UNION SELECT entity_id, parent_map_id FROM regions) AS owned_entities WHERE parent_map_id = OLD.map_id);
-    RETURN OLD;
-END $_$ LANGUAGE 'plpgsql';
+DELETE
+FROM entities
+WHERE entity_id IN (SELECT entity_id
+                    FROM (SELECT entity_id, parent_map_id
+                          FROM poses
+                          UNION
+                          SELECT entity_id, parent_map_id
+                          FROM points
+                          UNION
+                          SELECT entity_id, parent_map_id
+                          FROM regions
+                          UNION
+                          SELECT entity_id, parent_map_id
+                          FROM doors) AS owned_entities
+                    WHERE parent_map_id = OLD.map_id);
+RETURN OLD;
+END $_$
+LANGUAGE 'plpgsql';
 
 CREATE TRIGGER delete_map_owned_entities
-BEFORE DELETE ON maps
-FOR EACH ROW
-EXECUTE PROCEDURE delete_map_owned_entities();
+    BEFORE DELETE
+    ON maps
+    FOR EACH ROW
+    EXECUTE PROCEDURE delete_map_owned_entities();
 
 CREATE TABLE points
 (
@@ -176,12 +192,17 @@ CREATE TABLE points
         ON UPDATE CASCADE
 );
 
+/* Simplifies retrieving poses as (x,y,theta) tuples*/
+CREATE VIEW points_xy AS
+SELECT entity_id, point[0] as x, point[1] as y, point_name, parent_map_id
+FROM points;
+
 CREATE TABLE regions
 (
-    entity_id int NOT NULL,
-    region_name varchar(24) NOT NULL,
-    parent_map_id int NOT NULL,
-    region polygon NOT NULL,
+    entity_id     int         NOT NULL,
+    region_name   varchar(24) NOT NULL,
+    parent_map_id int         NOT NULL,
+    region        polygon     NOT NULL,
     PRIMARY KEY (entity_id, region_name, parent_map_id),
     UNIQUE (region_name, parent_map_id),
     FOREIGN KEY (entity_id)
@@ -212,15 +233,30 @@ CREATE TABLE poses
         ON UPDATE CASCADE
 );
 
+/* Simplifies retrieving poses as (x,y,theta) tuples*/
+CREATE VIEW poses_point_angle AS
+SELECT entity_id,
+       start[0] as x,
+       start[1] as y,
+       ATAN2(end_point[1] - start[1], end_point[0] - start[0])
+                as theta,
+       pose_name,
+       parent_map_id
+FROM (SELECT entity_id, pose[0] as start, pose[1] as end_point, pose_name, parent_map_id
+      FROM poses) AS dummy_sub_alias;
+
 /* This doesn't seem to work because NEW isn't available in the subquery for the INSERT section */
 CREATE FUNCTION normalize_pose() RETURNS TRIGGER AS $_$
 BEGIN
-    IF TG_OP = 'UPDATE' THEN
+    IF
+TG_OP = 'UPDATE' THEN
     WITH p (x1, y1, x2, y2) AS
     (SELECT st[0] AS x1, st[1] AS y1, en[0] as x2, en[1] AS y2 FROM
     (SELECT l[0] AS st, l[1] AS en FROM OLD.pose AS l) AS dummy),
     a(theta) AS (SELECT ATAN2(p.y2-p.y1,p.x2-p.x1) FROM p)
-    SELECT lseg(point(p.x1, p.y1), point(p.x1 + COS(a.theta), p.y1 + SIN(a.theta))) INTO OLD.pose FROM p;
+SELECT lseg(point(p.x1, p.y1), point(p.x1 + COS(a.theta), p.y1 + SIN(a.theta)))
+INTO OLD.pose
+FROM p;
     RETURN OLD;
     ELSIF TG_OP = 'INSERT' THEN
     SELECT lseg(point(x1, y1), point(x1 + COS(theta), y1 + SIN(theta))) INTO NEW.pose FROM
@@ -238,18 +274,13 @@ BEFORE UPDATE OF pose OR INSERT ON poses
 FOR EACH ROW
 EXECUTE PROCEDURE normalize_pose();*/
 
-/* Simplifies retrieving poses as (x,y,theta) tuples*/
-CREATE VIEW poses_point_angle AS
-  SELECT entity_id, start[0] as x, start[1] as y, ATAN2(end_point[1]-start[1],end_point[0]-start[0])
-                 as theta, pose_name, parent_map_id FROM (SELECT entity_id, pose[0] as start, pose[1] as end_point, pose_name, parent_map_id FROM
-                poses) AS dummy_sub_alias;
 
 CREATE TABLE doors
 (
     entity_id int NOT NULL,
     door_name varchar(24) NOT NULL,
     parent_map_id int NOT NULL,
-    door lseg NOT NULL,
+    line lseg NOT NULL,
     PRIMARY KEY (entity_id, door_name, parent_map_id),
     UNIQUE (door_name, parent_map_id),
     FOREIGN KEY (entity_id)
@@ -261,6 +292,11 @@ CREATE TABLE doors
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+/* Simplifies retrieving doors as (x_0,y_0) (x_1,y_1) tuples*/
+CREATE VIEW doors_points AS
+SELECT entity_id, start[0] as x_0, start[1] as y_0, end_point[0] as x_1, end_point[1] as y_1, door_name, parent_map_id FROM (SELECT entity_id, line[0] as start, line[1] as end_point, door_name, parent_map_id FROM
+    doors) AS dummy_sub_alias;
 
 /******************* FUNCTIONS */
 
@@ -429,6 +465,7 @@ VALUES ('answer_to', 'id'),
 ('default_location', 'id'),
 ('has', 'id'),
 ('height', 'float'),
+('width', 'float'),
 ('is_a', 'id'),
 ('is_connected', 'id'),
 ('is_delivered', 'id'),
@@ -439,7 +476,8 @@ VALUES ('answer_to', 'id'),
 ('is_open', 'bool'),
 ('is_placed', 'id'),
 ('name', 'str'),
-('part_of', 'id');
+('part_of', 'id'),
+('approach_to', 'id');
 $$;
 
 
@@ -450,9 +488,9 @@ AS
 $$
 
 INSERT INTO entities
-VALUES (1), (2), (3), (4), (5), (6);
+VALUES (1), (2), (3), (4), (5), (6), (7);
 INSERT INTO concepts
-VALUES (2, 'robot'), (3, 'map'), (4, 'point'), (5, 'pose'), (6, 'region') ;
+VALUES (2, 'robot'), (3, 'map'), (4, 'point'), (5, 'pose'), (6, 'region'), (7, 'door');
 INSERT INTO instance_of
 VALUES (1, 'robot');
 
