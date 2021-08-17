@@ -2,6 +2,7 @@
 #include <knowledge_representation/LongTermMemoryConduitInterface.h>
 #include <iostream>
 #include <string>
+#include <knowledge_representation/LTMCLock.h>
 #include <knowledge_representation/LTMCConcept.h>
 #include <knowledge_representation/LTMCInstance.h>
 #include <knowledge_representation/LTMCMap.h>
@@ -17,6 +18,7 @@ using std::string;
 using std::vector;
 namespace knowledge_rep
 {
+typedef LTMCLock<LongTermMemoryConduitPostgreSQL> Lock;
 typedef LTMCEntity<LongTermMemoryConduitPostgreSQL> Entity;
 typedef LTMCConcept<LongTermMemoryConduitPostgreSQL> Concept;
 typedef LTMCInstance<LongTermMemoryConduitPostgreSQL> Instance;
@@ -67,7 +69,10 @@ LongTermMemoryConduitPostgreSQL::LongTermMemoryConduitPostgreSQL(const string& d
   conn = std::unique_ptr<pqxx::connection>(new pqxx::connection("postgresql://postgres@" + hostname + "/" + db_name));
 }
 
-LongTermMemoryConduitPostgreSQL::~LongTermMemoryConduitPostgreSQL() = default;
+Lock LongTermMemoryConduitPostgreSQL::lock()
+{
+  return { *this, true };
+}
 
 bool LongTermMemoryConduitPostgreSQL::addEntity(uint id)
 {
@@ -592,6 +597,40 @@ bool LongTermMemoryConduitPostgreSQL::makeConcept(uint id, std::string name)
   {
     pqxx::work txn{ *conn, "makeConcept" };
     auto result = txn.parameterized("INSERT INTO concepts VALUES ($1, $2)")(id)(name).exec();
+    txn.commit();
+    return result.affected_rows() == 1;
+  }
+  catch (const std::exception& e)
+  {
+    std::cerr << e.what() << std::endl;
+    return false;
+  }
+}
+
+// LOCK BACKERS
+
+bool LongTermMemoryConduitPostgreSQL::acquireLock(LockImpl& lock)
+{
+  try
+  {
+    pqxx::work txn{ *conn, "acquireLock" };
+    auto result = txn.parameterized("SELECT pg_advisory_lock(0)").exec();
+    txn.commit();
+    return result.affected_rows() == 1;
+  }
+  catch (const std::exception& e)
+  {
+    std::cerr << e.what() << std::endl;
+    return false;
+  }
+}
+
+bool LongTermMemoryConduitPostgreSQL::releaseLock(LockImpl& lock)
+{
+  try
+  {
+    pqxx::work txn{ *conn, "releaseLock" };
+    auto result = txn.parameterized("SELECT pg_advisory_unlock(0)").exec();
     txn.commit();
     return result.affected_rows() == 1;
   }
