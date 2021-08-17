@@ -1,467 +1,86 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   preserveAspectRatio="xMidYMid meet"
-   width="375"
-   height="223"
-   viewBox="0 0 375 223"
-   version="1.1"
-   id="svg46"
-   sodipodi:docname="map_inkscape.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
-  <metadata
-     id="metadata52">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs50">
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="TriangleOutM"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="TriangleOutM">
-      <path
-         transform="scale(0.4)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
-         id="path1006" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="TriangleOutS"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="TriangleOutS">
-      <path
-         transform="scale(0.2)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
-         id="path1009" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="Tail"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Tail">
-      <g
-         style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         transform="scale(-1.2)"
-         id="g909">
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M -3.8048674,-3.9585227 L 0.54352094,0"
-           id="path897" />
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M -1.2866832,-3.9585227 L 3.0617053,0"
-           id="path1308" />
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M 1.3053582,-3.9585227 L 5.6537466,0"
-           id="path901" />
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M -3.8048674,4.1775838 L 0.54352094,0.21974226"
-           id="path903" />
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M -1.2866832,4.1775838 L 3.0617053,0.21974226"
-           id="path905" />
-        <path
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-opacity:1;fill-opacity:1"
-           d="M 1.3053582,4.1775838 L 5.6537466,0.21974226"
-           id="path907" />
-      </g>
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible;"
-       id="marker1275"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Arrow2Lend">
-      <path
-         transform="scale(1.1) rotate(180) translate(1,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         id="path1273" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="TriangleOutL"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="TriangleOutL">
-      <path
-         transform="scale(0.8)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
-         id="path1003" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible;"
-       id="Arrow2Lend"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Arrow2Lend">
-      <path
-         transform="scale(1.1) rotate(180) translate(1,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         id="path882" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible;"
-       id="Arrow1Lend"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Arrow1Lend">
-      <path
-         transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         id="path864" />
-    </marker>
-    <marker
-       inkscape:stockid="TriangleOutM"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="TriangleOutM-3"
-       style="overflow:visible"
-       inkscape:isstock="true">
-      <path
-         id="path1006-6"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
-         transform="scale(0.4)" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="TriangleOutM-3-3"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="TriangleOutM">
-      <path
-         transform="scale(0.4)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1006-6-6" />
-    </marker>
-  </defs>
-  <sodipodi:namedview
-     inkscape:document-rotation="0"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1515"
-     inkscape:window-height="968"
-     id="namedview48"
-     showgrid="false"
-     inkscape:zoom="14.831269"
-     inkscape:cx="11.085444"
-     inkscape:cy="136.14643"
-     inkscape:window-x="217"
-     inkscape:window-y="103"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg46"
-     showguides="true" />
-  <image
-     sodipodi:absref="/home/nick/workspaces/homeskies/src/knowledge_representation/test/resources/map/map.pgm"
-     xlink:href="map.pgm"
-     sodipodi:insensitive="true"
-     style="display:inline"
-     inkscape:label="image64"
-     id="image64"
-     preserveAspectRatio="none"
-     height="223"
-     width="375"
-     x="0"
-     y="0" />
-  <g
-     id="g10">
-    <text
-       class="text_annotation"
-       x="269"
-       y="157.5"
-       font-size="15px"
-       style="fill:#f10000;stroke:#f10000"
-       id="text6">point</text>
-    <circle
-       class="circle_annotation"
-       cx="269"
-       cy="132.5"
-       r="3.5"
-       style="fill:#f10000;stroke:#f10000"
-       id="circle8" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="223" version="1.1" viewBox="0 0 375 223" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="TriangleOutM-3-3" overflow="visible" orient="auto">
+   <path transform="scale(.4)" d="m5.77 0-8.65 5v-10z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="TriangleOutM-3-3-2" overflow="visible" orient="auto">
+   <path transform="scale(.4)" d="m5.77 0-8.65 5v-10z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <image width="375" height="223" preserveAspectRatio="none"
+        xlink:href="map.pgm"/>
+ <image xmlns="http://www.w3.org/2000/svg" id="background_img" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="data:image/png;base64,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"></image>
+ <g>
+  <text class="text_annotation" x="256.30594" y="153.12103" fill="#f10000" font-size="8px" stroke="#f10000">
+   <tspan fill="#000000" font-size="8px" stroke="none">point</tspan>
+  </text>
+  <circle class="circle_annotation" cx="266" cy="140" r="3.5"/>
+ </g>
+ <g>
+  <text class="text_annotation" x="4.8136582" y="10.607345" fill="#000000" font-size="8px">tlcorner</text>
+  <circle class="circle_annotation" cx=".945" cy=".383" r="3.5"/>
+ </g>
+ <g transform="translate(-148 -8.23)" fill="#f10000" stroke="#f10000">
+  <text class="text_annotation" x="154.54933" y="226.30865" font-size="8px">
+   <tspan fill="#000000" stroke="none">blcorner</tspan>
+  </text>
+  <circle class="circle_annotation" cx="149" cy="233" r="3.5" fill="#000" stroke="none"/>
+ </g>
+ <g transform="translate(198 -180)">
+  <text class="text_annotation" x="140.90181" y="190.78355" fill="#000000" font-size="8px">trcorner</text>
+  <circle class="circle_annotation" cx="178" cy="183" r="3.5"/>
+ </g>
+ <g transform="matrix(1 0 0 .000488 5.56 171)">
+  <text x="60.797371" y="182.20187" fill="#000000" font-family="sans-serif" font-size="16px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="60.797371" y="182.20187" font-size="16px">inkpose</tspan></text>
+ </g>
+ <g>
+  <path d="m141 1.25 79 0.601-0.41 80.3-79.2-0.0433z" fill="none" stroke="#00f"/>
+  <text x="220.91058" y="9.0966434" fill="#0000ff" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="220.91058" y="9.0966434" fill="#0000ff" font-size="8px">living room</tspan></text>
+ </g>
+ <g transform="translate(-5.71 -51.9)">
+  <g>
+   <circle cx="224" cy="176" r="3" fill="#1a1a1a" fill-rule="evenodd" stroke-width=".286"/>
+   <text x="227.02972" y="174.07503" fill="#000000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+         xml:space="preserve"><tspan x="227.02972" y="174.07503" font-size="8px">origin</tspan></text>
   </g>
-  <g
-     id="g1030">
-    <text
-       class="text_annotation"
-       x="3.02737"
-       y="27.511406"
-       font-size="15px"
-       style="fill:#f10000;stroke:#f10000"
-       id="text12">tlcorner</text>
-    <circle
-       class="circle_annotation"
-       cx="3.02737"
-       cy="2.5114067"
-       r="3.5"
-       style="fill:#f10000;stroke:#f10000"
-       id="circle14" />
-  </g>
-  <g
-     transform="translate(-147.77261,-8.2323082)"
-     id="g978">
-    <text
-       id="text12-3"
-       style="fill:#f10000;stroke:#f10000"
-       font-size="15px"
-       y="228.70796"
-       x="155.01216"
-       class="text_annotation">blcorner</text>
-    <circle
-       id="circle14-6"
-       style="fill:#f10000;stroke:#f10000"
-       cy="233.18904"
-       cx="149.46678"
-       class="circle_annotation"
-       r="3.5" />
-  </g>
-  <g
-     id="g978-7"
-     transform="translate(197.60654,-180.13885)">
-    <text
-       class="text_annotation"
-       x="120.8093"
-       y="205.73917"
-       font-size="15px"
-       style="fill:#f10000;stroke:#f10000"
-       id="text12-3-5">trcorner</text>
-    <circle
-       class="circle_annotation"
-       cx="177.52832"
-       cy="183.45184"
-       r="3.5"
-       style="fill:#f10000;stroke:#f10000"
-       id="circle14-6-3" />
-  </g>
-  <g
-     id="g1011">
-    <path
-       id="path859"
-       d="m 58.109151,168.2425 29.24091,-4.89384"
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutM-3)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       x="60.797371"
-       y="182.20187"
-       id="text1677"><tspan
-         sodipodi:role="line"
-         id="tspan1675"
-         x="60.797371"
-         y="182.20187"
-         style="font-size:16px">inkpose</tspan></text>
-  </g>
-  <g
-     id="g1002">
-    <path
-       id="rect903"
-       style="fill:none;stroke:#ffd700;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 145.92732,1.1125172 h 90.26633 l -6.35516,73.1598288 -83.91117,8.176399 z"
-       sodipodi:nodetypes="ccccc" />
-    <text
-       inkscape:label="text907"
-       id="text907"
-       y="13.937788"
-       x="237.41788"
-       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;fill:#998100;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-size:16px;fill:#998100;fill-opacity:1"
-         y="13.937788"
-         x="237.41788"
-         id="tspan905"
-         sodipodi:role="line">living room</tspan></text>
-  </g>
-  <g
-     id="g1118"
-     transform="translate(-5.7134119,-51.920406)">
-    <circle
-       r="3"
-       cy="175.6171"
-       cx="223.65306"
-       id="path951"
-       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.286404" />
-    <text
-       id="text955"
-       y="179.73586"
-       x="227.8734"
-       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-size:16px"
-         y="179.73586"
-         x="227.8734"
-         sodipodi:role="line"
-         id="tspan1005">origin</tspan></text>
-  </g>
-  <g
-     id="g958">
-    <path
-       id="path1063"
-       d="m 284.80675,52.203704 88.72669,-2.022737 3.14305,106.184043 -12.81764,-0.40654 0.90199,51.66361 -38.08164,0.98259 -0.18501,13.54889 -34.70432,0.53872 z"
-       style="fill:none;stroke:#ff8c00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <text
-       id="text1067"
-       y="48.186642"
-       x="292.49796"
-       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-size:16px"
-         y="48.186642"
-         x="292.49796"
-         id="tspan1065"
-         sodipodi:role="line">kitchen</tspan></text>
-  </g>
-  <g
-     id="g1034"
-     sodipodi:insensitive="true">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutM-3-3)"
-       d="m 113.07439,112.36701 -22.700693,0.59925"
-       id="path859-5"
-       sodipodi:nodetypes="cc" />
-    <text
-       id="text1677-3"
-       y="128.08711"
-       x="117.36356"
-       style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-size:16px"
-         y="128.08711"
-         x="117.36356"
-         id="tspan1675-5"
-         sodipodi:role="line">inkpose2</tspan></text>
-  </g>
-  <g
-     transform="translate(152.73784,58.497528)"
-     id="g978-7-5">
-    <text
-       id="text12-3-5-2"
-       style="fill:#f10000;stroke:#f10000"
-       font-size="15px"
-       y="162.87703"
-       x="154.45126"
-       class="text_annotation">brcorner</text>
-    <circle
-       id="circle14-6-3-9"
-       style="fill:#f10000;stroke:#f10000"
-       r="3.5"
-       cy="165.80513"
-       cx="222.45621"
-       class="circle_annotation" />
-  </g>
-  <g
-     id="g88">
-    <circle
-       style="fill:#ff0000;fill-rule:evenodd"
-       id="path68"
-       cx="13.108473"
-       cy="136.97704"
-       r="1.727037" />
-    <circle
-       style="fill:#ff0000;fill-rule:evenodd"
-       id="path68-3"
-       cx="12.552642"
-       cy="144.86409"
-       r="1.727037"
-       inkscape:transform-center-x="2.6881649"
-       inkscape:transform-center-y="8.0826679" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       x="19.937864"
-       y="152.08687"
-       id="text87"><tspan
-         sodipodi:role="line"
-         id="tspan85"
-         x="19.937864"
-         y="152.08687"
-         style="font-size:10.6667px">inkdoor1</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 2.1140883,141.02865 H 22.114088"
-       id="path66" />
-  </g>
-  <g
-     id="g107"
-     transform="translate(82.020443,-162.34074)">
-    <circle
-       style="fill:#ff0000;fill-rule:evenodd"
-       id="path68-6"
-       cx="104.44855"
-       cy="176.79721"
-       r="1.727037" />
-    <circle
-       style="fill:#ff0000;fill-rule:evenodd"
-       id="path68-3-7"
-       cx="91.563507"
-       cy="176.76047"
-       r="1.727037" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       x="102.12562"
-       y="187.62563"
-       id="text87-5"><tspan
-         sodipodi:role="line"
-         id="tspan85-3"
-         x="102.12562"
-         y="187.62563"
-         style="font-size:10.6667px">inkdoor2</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 98.563591,167.3048 0.08219,19.6429"
-       id="path66-5"
-       sodipodi:nodetypes="cc" />
-  </g>
+ </g>
+ <g>
+  <path d="m281 49.9 92.3 0.296 0.715 106-10.4-0.615 0.902 51.7-42.6 0.114 0.111 12.4-38.2 0.614z" fill="none"
+        stroke="#f00" stroke-width="1px"/>
+  <text x="283.18225" y="46.213421" fill="#ff0000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="283.18225" y="46.213421" fill="#ff0000" font-size="8px">kitchen</tspan></text>
+ </g>
+ <g transform="translate(0 5.55)">
+  <path d="m113 112-10.3-6.71" fill="none" marker-end="url(#TriangleOutM-3-3)" stroke="#000" stroke-miterlimit="1"/>
+  <text x="113.24533" y="120.78751" fill="#000000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="113.24533" y="120.78751" font-size="8px">pose2</tspan></text>
+ </g>
+ <g transform="translate(153 58.5)">
+  <text class="text_annotation" x="182.93913" y="163.38864" fill="#000000" font-size="8px">brcorner</text>
+  <circle class="circle_annotation" cx="222" cy="166" r="3.5"/>
+ </g>
+ <g>
+  <circle cx="13.1" cy="137" r="1.73" fill="#f00" fill-rule="evenodd"/>
+  <circle cx="12.6" cy="145" r="1.73" fill="#f00" fill-rule="evenodd"/>
+  <text x="19.937864" y="152.68159" fill="#000000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="19.937864" y="152.68159" font-size="8px">door1</tspan></text>
+  <path d="m2.11 141h20" fill="none" stroke="#000" stroke-width="1px"/>
+ </g>
+ <g transform="translate(79.4 -166)">
+  <circle cx="104" cy="177" r="1.73" fill="#f00" fill-rule="evenodd"/>
+  <circle cx="91.6" cy="177" r="1.73" fill="#f00" fill-rule="evenodd"/>
+  <text x="109.77447" y="184.18695" fill="#000000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="109.77447" y="184.18695" font-size="8px">door2</tspan></text>
+  <path d="m98.6 167 0.0822 19.6" fill="none" stroke="#000" stroke-width="1px"/>
+ </g>
+ <g transform="translate(-27.4 57.7)">
+  <path d="m113 112 10.7-8.02" fill="none" marker-end="url(#TriangleOutM-3-3-2)" stroke="#000" stroke-miterlimit="1"/>
+  <text x="113.24533" y="120.78751" fill="#000000" font-family="sans-serif" font-size="8px" style="line-height:1.25"
+        xml:space="preserve"><tspan x="113.24533" y="120.78751" font-size="8px">pose</tspan></text>
+ </g>
 </svg>
