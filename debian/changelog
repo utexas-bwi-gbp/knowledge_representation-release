@@ -1,0 +1,49 @@
+ros-noetic-knowledge-representation (0.9.4-1focal) focal; urgency=high
+
+  * Add lock capability to LTMC
+  * Improve support for SVG transforms in map annotations
+  * Document map annotation process
+  * Improve example annotated map
+  * Contributors: Nick Walker, Yuqian Jiang, Tobias Fischer
+
+ -- Nick Walker <nswalker@cs.washington.edu>  Mon, 16 Aug 2021 07:00:00 -0000
+
+ros-noetic-knowledge-representation (0.9.3-1focal) focal; urgency=high
+
+  * Add door type
+  * Add script for making a PGM that has annotated doors as obstacles
+  * Update annotation loader to look for groups that look like door annotations
+  * Fix "contained" queries and use in show_me
+  * Minor documentation improvements
+  * Support "instance_of" in knowledge loader
+  * Fix API for SELECT queries on entity_attributes tables
+  * Contributors: Nick Walker, Yuqian Jiang
+
+ -- Nick Walker <nswalker@cs.washington.edu>  Sat, 06 Feb 2021 08:00:00 -0000
+
+ros-noetic-knowledge-representation (0.9.2-1focal) focal; urgency=high
+
+  * Fix errant Python2 style print
+  * Build Python3 bindings for new distributions
+  * Conditional dependencies for Python2/Python3 image library
+  * Use setuptools always
+  * Bump CMake version to avoid CMP0048
+  * Contributors: Nick Walker, Shane Loretz
+
+ -- Nick Walker <nswalker@cs.washington.edu>  Sun, 26 Jul 2020 07:00:00 -0000
+
+ros-noetic-knowledge-representation (0.9.1-1focal) focal; urgency=high
+
+  * Update YAML knowledge_loader
+  * Support passing multiple maps to the map loader
+  * Update rosdeps for Noetic
+
+ -- Nick Walker <nswalker@cs.washington.edu>  Thu, 23 Jul 2020 07:00:00 -0000
+
+ros-noetic-knowledge-representation (0.9.0-1focal) focal; urgency=high
+
+  * Initial release
+
+ -- Nick Walker <nswalker@cs.washington.edu>  Tue, 07 Jul 2020 07:00:00 -0000
+
+
